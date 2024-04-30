@@ -18,6 +18,7 @@ public class LoginController : Controller
         return View();
     }
 
+       //for login --------------------------------------------------------------
        public IActionResult Login()
         {
             return View();
@@ -39,6 +40,52 @@ public class LoginController : Controller
                 return View();
             }
         }
+
+
+      //for User_Registration ------------------------------------------------
+       public IActionResult User_Registration()
+        {
+            return View();
+        }
+
+        // [HttpPost]
+        // public IActionResult User_Registration(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password, IFormFile image)
+        // {
+        //     // Your code to process the form data goes here
+        //      Console.WriteLine(id,name,age,mobile, aadhar_no,licence_no,address,gender,password,image);
+        //     return RedirectToAction("Index", "Home");
+        // }
+        
+        [HttpPost]
+        public IActionResult User_Registration(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password, IFormFile image)
+        {
+            // Your code to process the form data goes here
+            Console.WriteLine($"Id: {id}");
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Mobile: {mobile}");
+            Console.WriteLine($"Aadhar No: {aadhar_no}");
+            Console.WriteLine($"Licence No: {licence_no}");
+            Console.WriteLine($"Address: {address}");
+            Console.WriteLine($"Gender: {gender}");
+            Console.WriteLine($"Password: {password}");
+            
+            if (image != null)
+            {
+                Console.WriteLine($"Image name: {image.FileName}");
+                // You can add additional code here to save the image or process it as needed
+            }
+            else
+            {
+                Console.WriteLine("No image uploaded");
+            }
+
+            // Redirect to home page
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        //------------------------------------------------------------------
 
     public IActionResult Privacy()
     {
