@@ -31,7 +31,7 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    class Vehicle
+    public class Vehicle
     {
        public Vehicle()
         {
