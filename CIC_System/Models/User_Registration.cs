@@ -10,7 +10,7 @@ namespace Models
             Vehicles = new List<Vehicle>();
         }
 
-        public User_Registration(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password, byte[] image)
+        public User_Registration(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password,string mail)
         {
             Id = id;
             Name = name;
@@ -21,7 +21,8 @@ namespace Models
             Address = address;
             Gender = gender;
             Password = password;
-            Image = image;
+            Mail = mail;
+           // Image = image;
             Vehicles = new List<Vehicle>();
         }
 
@@ -34,7 +35,8 @@ namespace Models
         public string Address { get; set; }
         public string Gender { get; set; }
         public string Password { get; set; }
-        public byte[] Image { get; set; }
+        public string Mail { get; set; }
+      //  public byte[] Image { get; set; }
 
         public List<Vehicle> Vehicles { get; set; }
     }

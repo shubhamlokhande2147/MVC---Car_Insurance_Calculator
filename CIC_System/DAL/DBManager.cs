@@ -61,24 +61,14 @@ namespace DAL
     {
         public static string conString = @"server=localhost;port=3306;user=root;password=Shubham@2147;database=CIC_System";
 
-        public static bool AddUser(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password, IFormFile image)
+        public static bool AddUser(int id, string name, int age, int mobile, int aadhar_no, string licence_no, string address, string gender, string password,string mail)
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = conString;
-            string query = "INSERT INTO user_registration (Id, Name, Age, Mobile, Aadhar_no, Licence_no, Address, Gender, Password, Image) VALUES (@Id, @Name, @Age, @Mobile, @Aadhar_no, @Licence_no, @Address, @Gender, @Password, @Image)";
+            string query = "INSERT INTO user_registration (Id, Name, Age, Mobile, Aadhar_no, Licence_no, Address, Gender, Password,Mail) VALUES (@Id, @Name, @Age, @Mobile, @Aadhar_no, @Licence_no, @Address, @Gender, @Password,@Mail)";
 
             try
             {
-                byte[] imageBytes = null;
-                if (image != null && image.Length > 0)
-                {
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        image.CopyTo(memoryStream);
-                        imageBytes = memoryStream.ToArray();
-                    }
-                }
-
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -89,8 +79,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@Address", address);
                 cmd.Parameters.AddWithValue("@Gender", gender);
                 cmd.Parameters.AddWithValue("@Password", password);
-                cmd.Parameters.AddWithValue("@Image", imageBytes); // Store image as byte array
-
+                cmd.Parameters.AddWithValue("@Mail", mail);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -105,8 +94,47 @@ namespace DAL
             }
             return false;
         }
-    }
 
+
+        public static int Login(string mail, string password)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = conString;
+            string query = "SELECT ID FROM user_registration WHERE Mail = @Mail AND Password = @Password";
+            
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Mail", mail);
+                cmd.Parameters.AddWithValue("@Password", password);
+                conn.Open();
+                
+                object result = cmd.ExecuteScalar();
+                
+                if (result != null)
+                {
+                    Console.WriteLine(result);  //print id here
+                    return Convert.ToInt32(result); // Return the ID
+                }
+                else
+                {
+                    return -1; // Return -1 if user not found
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1; // Return -1 in case of any exception
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+    }
 
     // public static bool UpdateBookByID(Book b)
     // {
