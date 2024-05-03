@@ -1,0 +1,70 @@
+@using Models
+
+@model List<Vehicle>
+
+@{
+    ViewData["Title"] = "Vehicle List";
+}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Your App Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Vehicle/Vehicle_Registration">Vehicle_Registration</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Vehicle/Vehicle_List">All Vehicles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Login/Login">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1>Vehicle List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Vehicle ID</th>
+            <th>Vehicle Number</th>
+            <th>Vehicle Price</th>
+            <th>Vehicle Company</th>
+            <th>Date of Purchase</th>
+            <th>Engine Number</th>
+            <th>Fuel Type</th>
+            <th>Action</th>
+            <th>Total Insurance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>@vehicle.Vid</td>
+                <td>@vehicle.Vno</td>
+                <td>@vehicle.Vprice</td>
+                <td>@vehicle.Vcompany</td>
+                <td>@vehicle.Date_of_Purchase</td>
+                <td>@vehicle.Engine_no</td>
+                <td>@vehicle.Fuel_Type</td>
+                <td>
+                    <a href="/">Details</a>
+                    <a href="/Vehicle/Vehicle_Edit/@vehicle.Vid">Edit</a>
+                </td>
+                <td>
+                    <a href="/">Total insurance</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

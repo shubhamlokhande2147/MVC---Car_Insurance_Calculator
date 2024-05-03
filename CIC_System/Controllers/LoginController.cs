@@ -34,6 +34,10 @@ namespace CIC_System.Controllers
         {
 
             int userID  = DBManager.Login(mail,password);
+          
+            Console.WriteLine("UserID in Logincontroller" , userID); //print here userID
+            TempData["data"] = userID;  //pass userID to vehiclecontroller using TempData
+
 
            Console.WriteLine(userID);   //here, print returned id, after login
             if (userID != -1)

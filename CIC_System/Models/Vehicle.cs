@@ -38,7 +38,7 @@ namespace Models
 
         }
 
-        public Vehicle(int vid, int vno, double vprice, string vcompany, string date_of_Purchase, string engine_no, string fuel_Type, int userId)
+        public Vehicle(int vid, string vno, double vprice, string vcompany, string date_of_Purchase, string engine_no, string fuel_Type, int userId)
         {
             Vid = vid;
             Vno = vno;
@@ -52,7 +52,7 @@ namespace Models
 
 
         public int Vid { get; set; }
-        public int Vno { get; set; }
+        public string Vno { get; set; }
         public double Vprice { get; set; }
         public string Vcompany { get; set; }
         public string Date_of_Purchase { get; set; }
