@@ -58,8 +58,16 @@
                 <td>@vehicle.Engine_no</td>
                 <td>@vehicle.Fuel_Type</td>
                 <td>
-                    <a href="/">Details</a>
+                    <a href="/Vehicle/Vehicle_View/@vehicle.Vid">View</a>
                     <a href="/Vehicle/Vehicle_Edit/@vehicle.Vid">Edit</a>
+                    <a href="/Vehicle/Vehicle_Delete/@vehicle.Vid">Delete</a>
+
+                   
+                   <!-- <a class="text-dark btn btn-danger" href="/Vehicle/Vehicle_Edit/@vehicle.Vid">Edit</a> -->
+                   <!-- <a class="text-dark btn btn-primary" href="/Vehicle/Vehicle_Edit/@vehicle.Vid">Edit</a> -->
+
+                   @{Console.WriteLine("@vehicle.Vid is = " + vehicle.Vid);}
+                    
                 </td>
                 <td>
                     <a href="/">Total insurance</a>

@@ -3,13 +3,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (!string.IsNullOrEmpty(ViewBag.Error))
-{
-    <div class="alert alert-danger" role="alert">
-        @ViewBag.Error
-    </div>
-}
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">Your App Name</a>
@@ -20,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/Vehicle/Vehicle_Registration">Vehicle_Registration</span></a>
+                    <a class="nav-link" href="/Vehicle/Vehicle_Registration">Vehicle_Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Vehicle/Vehicle_List">All Vehicles</a>
@@ -40,38 +33,30 @@
                 <div class="card-header">Vehicle Edit</div>
                 <div class="card-body">
                     <form method="post">
-                        <!-- <div class="form-group">
-                            <label for="vid">Vehicle ID:</label>
-                            <input type="text" class="form-control" id="vid" name="vid">
-                        </div> -->
+                             <div class="form-group">
+                            <label for="vno">Vehicle ID:</label>
+                            <input type="text" class="form-control" id="Vid" name="Vid" value="@Model.Vid" readonly>
+                        </div>
                         <div class="form-group">
                             <label for="vno">Vehicle Number:</label>
-                            <input type="text" class="form-control" id="vno" name="vno">
+                            <input type="text" class="form-control" id="vno" name="vno" value="@Model.Vno" readonly>
                         </div>
                         <div class="form-group">
                             <label for="vprice">Vehicle Price:</label>
-                            <input type="text" class="form-control" id="vprice" name="vprice">
+                            <input type="text" class="form-control" id="vprice" name="vprice" value="@Model.Vprice">
                         </div>
                         <div class="form-group">
                             <label for="vcompany">Vehicle Company:</label>
-                            <input type="text" class="form-control" id="vcompany" name="vcompany">
+                            <input type="text" class="form-control" id="vcompany" name="vcompany" value="@Model.Vcompany">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="date_of_Purchase">Date of Purchase:</label>
-                            <input type="text" class="form-control" id="date_of_Purchase" name="date_of_Purchase">
-                        </div> -->
                         <div class="form-group">
                             <label for="date_of_Purchase">Date of Purchase:</label>
-                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase">
+                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase" value="@Model.Date_of_Purchase">
                         </div>
                         <div class="form-group">
                             <label for="engine_no">Engine Number:</label>
-                            <input type="text" class="form-control" id="engine_no" name="engine_no">
+                            <input type="text" class="form-control" id="engine_no" name="engine_no" value="@Model.Engine_no" readonly>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="fuel_Type">Fuel Type:</label>
-                            <input type="text" class="form-control" id="fuel_Type" name="fuel_Type">
-                        </div> -->
                         <div class="form-group">
                             <label for="fuel_Type">Fuel Type:</label>
                             <select class="form-control" id="fuel_Type" name="fuel_Type">
@@ -83,11 +68,6 @@
                                 <option value="hydrogen">Hydrogen</option>
                             </select>
                         </div><br/><br/>
-                        <!-- <div class="form-group">
-                            <label for="userId">User ID:</label>
-                            <input type="text" class="form-control" id="userId" name="userId">
-                        </div> -->
-
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
