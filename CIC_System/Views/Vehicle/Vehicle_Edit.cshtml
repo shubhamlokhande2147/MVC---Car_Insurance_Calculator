@@ -43,15 +43,15 @@
                         </div>
                         <div class="form-group">
                             <label for="vprice">Vehicle Price:</label>
-                            <input type="text" class="form-control" id="vprice" name="vprice" value="@Model.Vprice">
+                            <input type="text" class="form-control" id="vprice" name="vprice" value="@Model.Vprice" required>
                         </div>
                         <div class="form-group">
                             <label for="vcompany">Vehicle Company:</label>
-                            <input type="text" class="form-control" id="vcompany" name="vcompany" value="@Model.Vcompany">
+                            <input type="text" class="form-control" id="vcompany" name="vcompany" value="@Model.Vcompany" required>
                         </div>
                         <div class="form-group">
                             <label for="date_of_Purchase">Date of Purchase:</label>
-                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase" value="@Model.Date_of_Purchase">
+                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase" value="@Model.Date_of_Purchase" required>
                         </div>
                         <div class="form-group">
                             <label for="engine_no">Engine Number:</label>
@@ -59,16 +59,20 @@
                         </div>
                         <div class="form-group">
                             <label for="fuel_Type">Fuel Type:</label>
-                            <select class="form-control" id="fuel_Type" name="fuel_Type">
-                                <option value="null">Select</option>
+                            <select class="form-control" id="fuel_Type" name="fuel_Type" required>
+                                <option value="" disabled selected>Select</option>
                                 <option value="petrol">Petrol</option>
                                 <option value="diesel">Diesel</option>
                                 <option value="electrical">Electrical</option>
                                 <option value="cng">CNG</option>
                                 <option value="hydrogen">Hydrogen</option>
                             </select>
-                        </div><br/><br/>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <br/>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>                     
                     </form>
                 </div>
             </div>

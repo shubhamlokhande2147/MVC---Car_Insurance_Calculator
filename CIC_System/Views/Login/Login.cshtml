@@ -1,4 +1,4 @@
-@{
+<!-- @{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -49,6 +49,70 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">CIC System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Login/User_Registration">New User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Login/Login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">Login</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mt-3" alt="App Logo">
+                        </div>
+                        <div class="col-md-8">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="mail">Email</label>
+                                    <input type="text" class="form-control" id="mail" name="mail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div><br/>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

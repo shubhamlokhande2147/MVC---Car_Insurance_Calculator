@@ -19,3 +19,49 @@
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Factors Edit</div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="Fid">Factor ID:</label>
+                            <input type="text" class="form-control" id="Fid" name="Fid" value="@Model.Fid" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="Own_Damage_Premium_Discount_Percentage">Own Damage Premium Discount Percentage:</label>
+                            <input type="number" class="form-control" id="Own_Damage_Premium_Discount_Percentage" name="Own_Damage_Premium_Discount_Percentage" value="@Model.Own_Damage_Premium_Discount_Percentage" max="100" title="Percentage is up to 100"  required>
+                        </div>
+                        <div class="form-group">
+                            <label for="No_Claim_Discount_Percentage">No Claim Discount Percentage:</label>
+                            <input type="number" class="form-control" id="No_Claim_Discount_Percentage" name="No_Claim_Discount_Percentage" value="@Model.No_Claim_Discount_Percentage" max="100" title="Percentage is up to 100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Accident_Cover">Accident Cover:</label>
+                            <input type="text" class="form-control" id="Accident_Cover" name="Accident_Cover" value="@Model.Accident_Cover" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Legal_Libility">Legal Liability:</label>
+                            <input type="text" class="form-control" id="Legal_Libility" name="Legal_Libility" value="@Model.Legal_Libility" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Third_Party">Third Party:</label>
+                            <input type="text" class="form-control" id="Third_Party" name="Third_Party" value="@Model.Third_Party" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Service_Tax_Percentage">Service Tax Percentage:</label>
+                            <input type="number" class="form-control" id="Service_Tax_Percentage" name="Service_Tax_Percentage" value="@Model.Service_Tax_Percentage" max="100" title="Service Tax is up to 100"  required>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>                     
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

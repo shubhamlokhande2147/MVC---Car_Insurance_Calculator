@@ -46,15 +46,15 @@
                         </div> -->
                         <div class="form-group">
                             <label for="vno">Vehicle Number:</label>
-                            <input type="text" class="form-control" id="vno" name="vno">
+                            <input type="text" class="form-control" id="vno" name="vno" required>
                         </div>
                         <div class="form-group">
                             <label for="vprice">Vehicle Price:</label>
-                            <input type="text" class="form-control" id="vprice" name="vprice">
+                            <input type="text" class="form-control" id="vprice" name="vprice" required>
                         </div>
                         <div class="form-group">
                             <label for="vcompany">Vehicle Company:</label>
-                            <input type="text" class="form-control" id="vcompany" name="vcompany">
+                            <input type="text" class="form-control" id="vcompany" name="vcompany" required>
                         </div>
                         <!-- <div class="form-group">
                             <label for="date_of_Purchase">Date of Purchase:</label>
@@ -62,36 +62,52 @@
                         </div> -->
                         <div class="form-group">
                             <label for="date_of_Purchase">Date of Purchase:</label>
-                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase">
+                            <input type="date" class="form-control" id="date_of_Purchase" name="date_of_Purchase" required>
                         </div>
                         <div class="form-group">
                             <label for="engine_no">Engine Number:</label>
-                            <input type="text" class="form-control" id="engine_no" name="engine_no">
+                            <input type="text" class="form-control" id="engine_no" name="engine_no" required>
                         </div>
                         <!-- <div class="form-group">
                             <label for="fuel_Type">Fuel Type:</label>
                             <input type="text" class="form-control" id="fuel_Type" name="fuel_Type">
                         </div> -->
                         <div class="form-group">
+                         <div class="form-group">
                             <label for="fuel_Type">Fuel Type:</label>
-                            <select class="form-control" id="fuel_Type" name="fuel_Type">
-                                <option value="null">Select</option>
-                                <option value="petrol">Petrol</option>
-                                <option value="diesel">Diesel</option>
-                                <option value="electrical">Electrical</option>
-                                <option value="cng">CNG</option>
-                                <option value="hydrogen">Hydrogen</option>
+                            <select class="form-control" id="fuel_Type" name="fuel_Type" required>
+                                <option value="">Select</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="CNG">CNG</option>
+                                <option value="Hydrogen">Hydrogen</option>
                             </select>
-                        </div><br/><br/>
+                        </div>
+                        </div><br/>
                         <!-- <div class="form-group">
                             <label for="userId">User ID:</label>
                             <input type="text" class="form-control" id="userId" name="userId">
                         </div> -->
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>                  
+                      </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- for date validation, for display only next dates - - -->
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("date_of_Purchase").setAttribute('min', today);
+</script>
+
+<!-- for display only previous dates - -->
+<!-- <script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("date_of_Purchase").setAttribute('max', today);
+</script> -->
