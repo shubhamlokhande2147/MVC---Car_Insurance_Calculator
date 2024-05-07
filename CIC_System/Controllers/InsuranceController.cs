@@ -64,6 +64,10 @@ public class InsuranceController : Controller
                         double Vprice = vehicle.Vprice;
                         Console.WriteLine($"Vprice : {Vprice}");
 
+                        string Vno = vehicle.Vno;
+                        Console.WriteLine($"Vno : {Vno}");
+
+
                         //receive data from Factors table
                          Factors factors = InsuranceDBManager.GetFactorsById(1);
                        
@@ -141,34 +145,34 @@ public class InsuranceController : Controller
                                              
                       // 10) calculate Total_Premium -
                        Total_Premium = Net_Premium + Service_Tax;
+           
+                        // Console.WriteLine("Depreciation Amount: " + Depreciation_Amount);
+                        // Console.WriteLine("Insured Declared Amount: " + Insured_Declared_Amount);
+                        // Console.WriteLine("Own Damage Premium: " + Own_Damage_Premium);
+                        // Console.WriteLine("No Claim Discount: " + No_Claim_Discount);
+                        // Console.WriteLine("Total Own Damage Premium: " + Total_Own_Damage_Premium);
+                        // Console.WriteLine("Net Premium: " + Net_Premium);
+                        // Console.WriteLine("Service Tax: " + Service_Tax);
+                        // Console.WriteLine("Total Premium: " + Total_Premium);
 
-                      // 2) calculate Depreciation_Amount
-Console.WriteLine("Depreciation Amount: " + Depreciation_Amount);
-
-// 3) calculate Insured_Declared_Amount
-Console.WriteLine("Insured Declared Amount: " + Insured_Declared_Amount);
-
-// 4) calculate Own_Damage_Premium
-Console.WriteLine("Own Damage Premium: " + Own_Damage_Premium);
-
-// 5) calculate No_Claim_Discount
-Console.WriteLine("No Claim Discount: " + No_Claim_Discount);
-
-// 6) calculate Total_Own_Damage_Premium
-Console.WriteLine("Total Own Damage Premium: " + Total_Own_Damage_Premium);
-
-// 8) calculate Net_Premium
-Console.WriteLine("Net Premium: " + Net_Premium);
-
-// 9) calculate Service_Tax
-Console.WriteLine("Service Tax: " + Service_Tax);
-
-// 10) calculate Total_Premium
-Console.WriteLine("Total Premium: " + Total_Premium);
+                          // Store the calculated values in ViewData
+                          ViewData["Vno"] = Vno;
+                          ViewData["Age"] = Age;
+                          ViewData["Vprice"] = Vprice;
+                          ViewData["Accident_Cover"] = Accident_Cover;
+                          ViewData["Legal_Libility"] = Legal_Libility;
+                          ViewData["Third_Party"] = Third_Party;
 
 
 
-
+                          ViewData["Depreciation_Amount"] = Depreciation_Amount;
+                          ViewData["Insured_Declared_Amount"] = Insured_Declared_Amount;
+                          ViewData["Own_Damage_Premium"] = Own_Damage_Premium;
+                          ViewData["No_Claim_Discount"] = No_Claim_Discount;
+                          ViewData["Total_Own_Damage_Premium"] = Total_Own_Damage_Premium;
+                          ViewData["Net_Premium"] = Net_Premium;
+                          ViewData["Service_Tax"] = Service_Tax;
+                          ViewData["Total_Premium"] = Total_Premium;
 
                     return View();
                 }

@@ -36,26 +36,67 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <tbody>
-                            <tr>
-                                <th>Vehicle ID</th>
+                            <thead class="thead-light" style="background-color: #f2f2f2;">
+                              <tr>
+                                <th class="text-center">Parameters</th>
+                                <td class="text-center"><b>Value</b></td>
                             </tr>
+                           </thead>
                             <tr>
                                 <th>Vehicle Number</th>
+                                <td><b>@ViewData["Vno"]</b></td>
                             </tr>
+                            <tr>
+                                <th>Vehicle Age</th>
+                                <td>@ViewData["Age"]</td>
+                            </tr>                          
                             <tr>
                                 <th>Vehicle Price</th>
+                                <td>@ViewData["Vprice"]</td>
                             </tr>
                             <tr>
-                                <th>Vehicle Company</th>
+                                <th>Accident Cover</th>
+                               <td>@ViewData["Accident_Cover"]</td>
                             </tr>
                             <tr>
-                                <th>Date of Purchase</th>
+                                <th>Legal Libility</th>
+                                <td>@ViewData["Legal_Libility"]</td>
                             </tr>
                             <tr>
-                                <th>Engine Number</th>
+                                <th>Third Party</th>
+                                <td>@ViewData["Third_Party"]</td>
                             </tr>
                             <tr>
-                                <th>Fuel Type</th>
+                                <th>Depreciation Amount</th>
+                                <td>@ViewData["Depreciation_Amount"]</td>
+                            </tr>
+                             <tr>
+                                <th>Insured Declared Amount</th>
+                                <td>@ViewData["Insured_Declared_Amount"]</td>
+                            </tr>
+                            <tr>
+                               <th>Own Damage Premium</th>
+                               <td>@ViewData["Own_Damage_Premium"]</td>
+                            </tr>
+                            <tr>
+                                <th>No Claim Discount</th>
+                                <td>@ViewData["No_Claim_Discount"]</td>
+                            </tr>
+                            <tr>
+                                <th>Total Own Damage Premium</th>
+                                <td>@ViewData["Total_Own_Damage_Premium"]</td>
+                            </tr>
+                            <tr>
+                                <th>Net Premium</th>
+                                <td>@ViewData["Net_Premium"]</td>
+                            </tr>
+                              <tr>
+                                <th>Service Tax</th>
+                                <td>@ViewData["Service_Tax"]</td>
+                            </tr>
+                            <tr>
+                                <th><b style="background-color: yellow;">Total Premium</b></th>
+                                <td><b style="background-color: yellow;">@ViewData["Total_Premium"]</b></td>
                             </tr>
                         </tbody>
                     </table>
